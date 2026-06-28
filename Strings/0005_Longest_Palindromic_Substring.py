@@ -1,3 +1,25 @@
+"""
+Problem: 5. Longest Palindromic Substring
+
+Difficulty: Medium
+
+Topic:
+- String
+- Two Pointers
+
+Approach:
+Treat every character (and every gap between two characters)
+as the center of a potential palindrome. Expand outward from
+each center while the characters on both sides are equal.
+Keep track of the longest palindrome found during the process.
+
+This approach handles both odd-length and even-length
+palindromes without generating all substrings.
+
+Time Complexity: O(n²)
+Space Complexity: O(1)
+"""
+
 class Solution(object):
     def longestPalindrome(self, s):
         """
