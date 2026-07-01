@@ -1,0 +1,54 @@
+"""
+Problem: 13. Roman to Integer
+
+Difficulty: Easy
+
+Topic:
+- Math
+- String
+- Hash Table
+
+Approach:
+Store the value of each Roman numeral in a dictionary.
+
+Traverse the string from left to right.
+
+For each symbol:
+- If its value is smaller than the value of the next symbol,
+  subtract it from the answer.
+- Otherwise, add it to the answer.
+
+The subtraction cases naturally handle Roman numerals such as
+IV, IX, XL, XC, CD, and CM.
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+"""
+
+class Solution(object):
+    def romanToInt(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+
+        roman = {
+            "I": 1,
+            "V": 5,
+            "X": 10,
+            "L": 50,
+            "C": 100,
+            "D": 500,
+            "M": 1000
+        }
+
+        total = 0
+
+        for i in range(len(s)):
+
+            if i < len(s) - 1 and roman[s[i]] < roman[s[i + 1]]:
+                total -= roman[s[i]]
+            else:
+                total += roman[s[i]]
+
+        return total
