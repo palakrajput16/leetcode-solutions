@@ -18,7 +18,7 @@ Initially:
 Traverse the string:
 - If the current character is 'I', append the smallest available
   number and increment low.
-- If it is 'D', append the largest available number and decrement
+- If it is 'D', append the largest available number gitand decrement
   high.
 
 After processing every character, one number remains.
